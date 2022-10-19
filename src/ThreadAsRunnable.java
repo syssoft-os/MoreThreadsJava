@@ -34,9 +34,9 @@ class ThreadAsRunnable {
         }
     }
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("AnotherThread_Final");
+        System.out.println("ThreadAsRunnable");
         Thread t1 = new Thread(count_to_100);
-        Thread t2 = new Thread(()-> count(100));
+        Thread t2 = new Thread(()-> count(100)); // Expression lambda
         // Thread t2 = new Thread(()-> { count(100);});
         Thread t3 = new Thread(new CounterRunnable());
         t1.start();
