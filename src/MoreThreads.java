@@ -51,6 +51,11 @@ public class MoreThreads {
         threads.add(new Thread(new CountThread()));
         threads.add(new Thread(count_runnable));
         threads.add(new Thread(new CountRunnable()));
+        threads.add(new Thread(new Runnable() {
+            public void run() {
+                count();
+            }
+        }));
 
         // Now start all the threads
         for (Thread t : threads) {
