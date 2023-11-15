@@ -37,13 +37,15 @@ class ThreadAsRunnable {
         System.out.println("ThreadAsRunnable");
         Thread t1 = new Thread(count_to_100);
         Thread t2 = new Thread(()-> count(100)); // Expression lambda
-        // Thread t2 = new Thread(()-> { count(100);});
-        Thread t3 = new Thread(new CounterRunnable());
+        Thread t3 = new Thread(()-> { count(100);});
+        Thread t4 = new Thread(new CounterRunnable());
         t1.start();
         t2.start();
         t3.start();
+        t4.start();
         t1.join();
         t2.join();
         t3.join();
+        t4.join();
     }
 }
